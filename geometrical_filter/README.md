@@ -1,7 +1,7 @@
 
 # Scripts for geometrical measurements/filters of kagome planes
 
-## For topological filtering, 
+## For topological filtering: 
 split_cif.py
 Author: Judith Clymo
 split_cif.py was used to separate the cif into elemental sublattice structures containing only one element. 
