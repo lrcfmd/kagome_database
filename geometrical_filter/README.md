@@ -1,7 +1,11 @@
 
-# For topological filtering, split_cif.py was used to separate the cif into elemental sublattice structures containing only one element. 
-# split_cif.py
+# Scripts for geometrical measurements/filters of kagome planes
+
+## For topological filtering, 
+split_cif.py
 Author: Judith Clymo
+split_cif.py was used to separate the cif into elemental sublattice structures containing only one element. 
+
 Extract information about individual elements from cifs
 Description of the SplitCif script
 The script looks for a specific section in the cif – a line that starts with "_atom_site_occupancy" and considers the section from here until the first line starting with _ or loop or End. These were the key words ending the section with the atom positions. Everything before and after this section is included in all the split out cifs. Within the key section it's separated by element - the element is identified from the start of each line. We generate as many cifs as different elements that are identified, and include the lines which started with that element symbol.
@@ -11,7 +15,7 @@ Instructions:
 
 
 
-# For geometrical filtering: 
+## For geometrical filtering: 
 Author: Dongsheng Wen
 1. To do the geometrical filtering/analysis, prepare the cifs and .gph files (gphs are from Topospro), which are listed in bulk_1_all.csv. In this bulk_1_all.csv, each cif entry has a list of gphs identified by topospro. All the necessary scripts to do the following tasks are provided in the python script kagome_tools.py. 
 2. The geometrical measurements of bonds and angles on the  empty kagome is documented in filter_kagome_bulk_1_G_1.ipynb. A simple filter is applied to the planes where coordination number is neither 4 or 6. 4 is for potential empty kagome planes and 6 is for potential filled kagome planes. Angles and bond lengths are measured for distortion filters.   
