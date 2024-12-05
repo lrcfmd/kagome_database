@@ -8,7 +8,7 @@ The large vector file required for this workflow can be found on the releases pa
 
 https://github.com/lrcfmd/kagome_database/releases/tag/V1.0
 
-Once downloaded and unzipped, the file should be moved to similarity_ranking.DATA
+Once downloaded, the file should be extracted in similarity_ranking.DATA
 
 ### Running workflow ###
 
