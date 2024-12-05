@@ -1,7 +1,6 @@
 ### Summary ###
 
-The dataset was used to train a binary classifier model to classify quaternary phase fields that contain at least one structure with kagome layers. A query dataset was generated from every unique quaternary combination of elements present in the training dataset. Autoencoders were used to compress the elemental features and rank the chemical feasibilityof query phase fields, by proxy of chemical similarity to the phase fields reported in the ICSD. Feasible query phase fields were then inputted into thebest performing binary 
-classifier model for probability evaluation. Pareto fronts were plotted to identify phase fields with an optimal combination of both metrics.
+The dataset was used to train a binary classifier model to classify quaternary phase fields that contain at least one structure with kagome layers. A query dataset was generated from every unique quaternary combination of elements present in the training dataset. Autoencoders were used to compress the elemental features and rank the chemical feasibility of query phase fields, by proxy of chemical similarity to the phase fields reported in the ICSD. Feasible query phase fields were then inputted into the best performing binary classifier model for probability evaluation. Pareto fronts were plotted to identify phase fields with an optimal combination of both metrics.
 
 ### Running workflow ###
 
@@ -17,6 +16,11 @@ classifier model for probability evaluation. Pareto fronts were plotted to ident
 
 3. similarity_ranking.plot_graphs.py
 # Creates graphs that weren't needed for analysis including histograms of reconstruction error distribution, and single/average MFD plots
+
+### To run scripts independently ###
+
+1. build_phasefields.py
+# As above
 
 2. binary_classifier.py
 # Tests binary classification models 
@@ -44,7 +48,7 @@ classifier model for probability evaluation. Pareto fronts were plotted to ident
 # Outputs interactive pareto plot, plot emphasising the first front and file containing each phase field and corresponding front
 
 7. plot_graphs.py
-# Plots histograms of reconstruction error distribution as well as single MFD plots. 
+# Plots histograms of reconstruction error distribution as well as single/mean MFD plots. 
 # Desired plots can be inputted into the graphs variable. If plotting single or mean MFD, specific ranking required by nvecs, which can be the number of vecs or "MP" for pure 
   magpie
 # All MFDs and pareto plots are built in get_candidates.py and plot_pareto.py respectively.
