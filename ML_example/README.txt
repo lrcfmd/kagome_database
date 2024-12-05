@@ -2,6 +2,14 @@
 
 The dataset was used to train a binary classifier model to classify quaternary phase fields that contain at least one structure with kagome layers. A query dataset was generated from every unique quaternary combination of elements present in the training dataset. Autoencoders were used to compress the elemental features and rank the chemical feasibility of query phase fields, by proxy of chemical similarity to the phase fields reported in the ICSD. Feasible query phase fields were then inputted into the best performing binary classifier model for probability evaluation. Pareto fronts were plotted to identify phase fields with an optimal combination of both metrics.
 
+### Downloading vectors ###
+
+The large vector file required for this workflow can be found on the releases page:
+
+https://github.com/lrcfmd/kagome_database/releases/tag/V1.0
+
+Once downloaded and unzipped, the file should be moved to similarity_ranking.DATA
+
 ### Running workflow ###
 
 1. results.build_phasefields.py
@@ -13,6 +21,7 @@ The dataset was used to train a binary classifier model to classify quaternary p
 
 2. main.py
 # Run to complete all parts of workflow: testing classifiers, similarity ranking, classification of query phase fields and calculation of pareto fronts
+# Vectors should be downloaded first from the link above
 
 3. similarity_ranking.plot_graphs.py
 # Creates graphs that weren't needed for analysis including histograms of reconstruction error distribution, and single/average MFD plots
@@ -28,6 +37,7 @@ The dataset was used to train a binary classifier model to classify quaternary p
 # Outputs scores acheived by each, or one, model. MCC was used to determine the best performing model 
 
 3. rank.py
+# Vectors should be downloaded first from the link above
 # Generates a query dataset
 # Runs a chemical similarity ranking between the reported "ground truth" and query phase fields as proxy for chemical feasibility of the query dataset
 # Use pre-calculated vectors to obtain same results. Vectors can also be compressed independently by setting "use_vecs" variable in "main" function to False.
