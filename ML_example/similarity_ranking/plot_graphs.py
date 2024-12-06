@@ -18,8 +18,8 @@ if "hist" in graphs:
     
     for k in range(2,9):
         xind = k-2
-        GT = np.array(pd.read_csv(f"DATA/ground_truth_ranking_{k}_features.csv")["RE"])
-        Q = np.array(pd.read_csv(f"DATA/query_ranking_{k}_features.csv")["RE"])
+        GT = np.array(pd.read_csv(f"ranking_results/ground_truth_ranking_{k}_features.csv")["RE"])
+        Q = np.array(pd.read_csv(f"ranking_results/query_ranking_{k}_features.csv")["RE"])
         GT_mean = np.mean(GT); Q_mean = np.mean(Q)
         GT_std = np.std(GT); Q_std = np.std(Q)
         GT_n, GT_bins, GT_patches = axes1[xind].hist(GT, 20, density=True)
@@ -47,8 +47,8 @@ if "hist" in graphs:
     
     
     fig3, axes3 = plt.subplots(nrows=1,ncols=2, sharey=True)
-    GT = np.array(pd.read_csv(f"DATA/ground_truth_ranking_MP_features.csv")["RE"])
-    Q = np.array(pd.read_csv(f"DATA/query_ranking_MP_features.csv")["RE"])
+    GT = np.array(pd.read_csv(f"ranking_results/ground_truth_ranking_MP_features.csv")["RE"])
+    Q = np.array(pd.read_csv(f"ranking_results/query_ranking_MP_features.csv")["RE"])
     GT_mean = np.mean(GT); Q_mean = np.mean(Q)
     GT_std = np.std(GT); Q_std = np.std(Q)
     GT_n, GT_bins, GT_patches = axes3[0].hist(GT, 20, density=True)
@@ -124,10 +124,10 @@ def plot(ax, k, GT_fraction, Q_fraction, single_eval, iter_num):
 
 def mean_per_PF(k,size,ranking):                                                                                
     if ranking=="GT":                                                                                           
-        data = pd.read_csv(f"DATA/ground_truth_ranking_{k}_features.csv")
+        data = pd.read_csv(f"ranking_results/ground_truth_ranking_{k}_features.csv")
         data = data["RE"]
     elif ranking=="Q":
-        data = pd.read_csv(f"DATA/query_ranking_{k}_features.csv")
+        data = pd.read_csv(f"ranking_results/query_ranking_{k}_features.csv")
         data = data["RE"]
     Nperms = factorial(size)
     Nuni = int(len(data)/Nperms)
@@ -144,8 +144,8 @@ def mean_per_PF(k,size,ranking):
 if "single_MFD" in graphs:
     plt.figure(dpi=200)
     fig, axes = plt.subplots(figsize = (20,10))
-    GT =  pd.read_csv(f"DATA/ground_truth_ranking_{nvecs}_features.csv")
-    Q = pd.read_csv(f"DATA/query_ranking_{nvecs}_features.csv")
+    GT =  pd.read_csv(f"ranking_results/ground_truth_ranking_{nvecs}_features.csv")
+    Q = pd.read_csv(f"ranking_results/query_ranking_{nvecs}_features.csv")
     GT_RE = GT["RE"]
     Q_RE = Q["RE"]
     ax = axes
