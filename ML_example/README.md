@@ -23,7 +23,7 @@ Once downloaded, the file should be extracted in similarity_ranking.DATA
 
 2. main.py
    - Run to complete all parts of workflow: testing classifiers, similarity ranking, classification of query phase fields and calculation of pareto fronts
-   - Vectors should be downloaded first from the link above [Downloading vectors(#Downloading-vectors)
+   - Vectors should be downloaded first from the link above [Downloading vectors](#Downloading-vectors)
 
 3. similarity_ranking.plot_graphs.py
    - Creates graphs that weren't needed for analysis including histograms of reconstruction error distribution, and single/average MFD plots
