@@ -188,6 +188,8 @@ def plot_history(history,k):                                                    
     plt.show()
 
 if __name__ == "__main__":
+    if "ranking_results" not in os.listdir():
+        os.mkdir("ranking_results")
     atoms = [s.strip() for s in open('../classification/DATA/Abbreviation.table', 'r').readlines()]
     features = features
     ground_truth, query = check_rnk(atoms, size = 4, fname = "phase_field_dataset.csv")
