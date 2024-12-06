@@ -23,7 +23,7 @@ Once downloaded, the file should be extracted in similarity_ranking.DATA
 
 2. main.py
    - Run to complete all parts of workflow: testing classifiers, similarity ranking, classification of query phase fields and calculation of pareto fronts
-   - Vectors should be downloaded first from the link above [vectors](#Downloading vectors)
+   - Vectors should be downloaded first from the link above [Downloading vectors(#Downloading-vectors)
 
 3. similarity_ranking.plot_graphs.py
    - Creates graphs that weren't needed for analysis including histograms of reconstruction error distribution, and single/average MFD plots
@@ -39,7 +39,7 @@ Once downloaded, the file should be extracted in similarity_ranking.DATA
    - Outputs scores acheived by each, or one, model. MCC was used to determine the best performing model 
 
 3. rank.py
-   - Vectors should be downloaded first from the link above [vectors](#Downloading vectors)
+   - Vectors should be downloaded first from the link above [Downloading vectors](#Downloading-vectors)
    - Generates a query dataset
    - Runs a chemical similarity ranking between the reported "ground truth" and query phase fields as proxy for chemical feasibility of the query dataset
    - Use pre-calculated vectors to obtain same results. Vectors can also be compressed independently by setting "use_vecs" variable in "main" function to False.
