@@ -17,7 +17,7 @@
    - This outputs chemically_feasible_candidates.csv
    - In **plot_MFD()**, **kmin** and **kmax** must be the same as used in **rank.py**, or 2 and 8 if using pre-built vectors
    - **L0**, **L1** and **del_ax** control the plots created. For example, to plot the seven MFD plots from the rankings using pre-built vectors: **L0=2** and **L1=4** creates a 2x4 figure of plots, and then the fourth plot on the top row is removed by specifying its index in **del_ax=3**
-   - 
+     
 ## plot_graphs.py
 
    - Plots graphs that aren't required in the main code for analysis
