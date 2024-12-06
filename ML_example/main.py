@@ -43,6 +43,8 @@ os.chdir(home)
 ####Chemical similarity ranking####
 
 os.chdir("similarity_ranking")
+if "ranking_results" not in os.listdir():
+    os.mkdir("ranking_results")
 atoms = [s.strip() for s in open('../classification/DATA/magpie/magpie_tables/Abbreviation.table', 'r').readlines()]
 features = features
 ground_truth, query = check_rnk(atoms, size = 4, fname = "phase_field_dataset.csv")
