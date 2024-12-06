@@ -16,6 +16,8 @@ from results.plot_pareto import *
 ####Initial testing of binary classifiers#####
 
 os.chdir("classification")
+if "classification_results" not in os.listdir():
+    os.mkdir("classification_results")
 fname = "phase_field_dataset.csv"
 x_train, x_test, y_train, y_test = check_cls(features = features, random_seed = 26, fname = fname, size = 4)
 print(y_train,x_train)
