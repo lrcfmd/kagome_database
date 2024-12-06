@@ -2,8 +2,11 @@ import numpy as np
 import pandas as pd
 import os
 import sys
-root_dir = os.path.abspath(os.path.join(os.getcwd(),".."))
-sys.path.append(os.path.join(root_dir,"classification"))
+rnk_dir = os.path.dirname("os.path.abspath(__file__))")
+home_dir = os.path.abspath(os.path.join(rnk_dir,".."))
+cls_dir = os.path.abspath(os.path.join(home_dir,"classification"))
+if cls_dir not in sys.path:
+    sys.path.append(cls_dir)
 from binary_classifier import limit_size, permute, read_features, make_dics
 from DATA.ELEMENTS import ELEMENTS
 from DATA.feature_labels import features
