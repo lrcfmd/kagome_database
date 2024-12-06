@@ -13,9 +13,9 @@ from DATA.feature_labels import features
 from itertools import combinations
 from autoencoders import compress, run_AE
 
-def check_rnk(atoms,size=None,fname=None):                                                                      ### Checks whether ground truth and query datasets are already
+def check_rnk(atoms=None,size=None,fname=None):                                                                      ### Checks whether ground truth and query datasets are already
     ground_truth = check_for_GT(atoms,size,fname)
-    query = check_for_Q(atoms,ground_truth,size,fname)
+    query = check_for_Q(ground_truth,atoms,size,fname)
     return ground_truth, query 
 
 def check_for_GT(atoms=None,size=None,fname=None):
@@ -43,7 +43,7 @@ def rm86(data,atoms):                                                           
     data.reset_index(drop=True,inplace=True)
     return data
 
-def check_for_Q(atoms,GT,size,fname):
+def check_for_Q(GT,atoms=None,size=None,fname=None):
     if "query.csv" in os.listdir("DATA"):                                                                             ### Loads existing query set
         print("Found existing query dataset...")
         query_df = pd.read_csv(f"DATA/query.csv")
