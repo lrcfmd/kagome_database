@@ -1,5 +1,6 @@
 ## rank.py
 
+   - If ground truth and query sets have been built already, **check_rnk** can accept no variables
    - Size of phase field can be changed in check_rnk but must be set to match the phase fields being studied as in binary_classifier.py
    - Query dataset is built of every unique combination of elements found in the ground truth dataset, that dont also constitute a phase field in the ground truth dataset
    - In **main()** ranking function, to use pre-built vectors **use_vecs=True**
@@ -14,7 +15,9 @@
    - Calculate the MFD between each ground truth-query ranking pair
    - The pair with the largest MFD is then used to assign query phase fields to the positive class
    - This outputs chemically_feasible_candidates.csv
-
+   - In **plot_MFD()**, **kmin** and **kmax** must be the same as used in **rank.py**, or 2 and 8 if using pre-built vectors
+   - **L0**, **L1** and **del_ax** control the plots created. For example, to plot the seven MFD plots from the rankings using pre-built vectors: **L0=2** and **L1=4** creates a 2x4 figure of plots, and then the fourth plot on the top row is removed by specifying its index in **del_ax=3**
+   - 
 ## plot_graphs.py
 
    - Plots graphs that aren't required in the main code for analysis
