@@ -86,10 +86,10 @@ def read_features(f):
 
 def make_dics(features):                                                                    ### Make dictionaries, with each dictionary containing the features of each element
     dics = [ {} for f in features]
-    symbols = [s.strip() for s in open('DATA/magpie/magpie_tables/Abbreviation.table', 'r').readlines()]
+    symbols = [s.strip() for s in open('DATA/magpie_tables/Abbreviation.table', 'r').readlines()]
     for i,f in enumerate(features):
         try:
-            table = read_features(f'DATA/magpie/magpie_tables/{f}.table')
+            table = read_features(f'DATA/magpie_tables/{f}.table')
             dics[i]  = {sym: float(num) for sym, num in zip(symbols, table)} 
         except:
             pass
